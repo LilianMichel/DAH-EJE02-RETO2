@@ -1,17 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      INICIO
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content color="warning" padding>
+  <ion-grid>
+    <form [formGroup]="myForm">
+      <ion-row color="warning" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Login</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-label>Nombre: </ion-label>
+              <ion-input formControlName="name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Curp: </ion-label>
+              <ion-input formControlName="curp" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Número de control: </ion-label>
+              <ion-input formControlName="controlnumber" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Edad: </ion-label>
+              <ion-input formControlName="age" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Activo</ion-label>
+              <ion-toggle formControlName="active" color="warning"></ion-toggle>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button size="large" type="button" [disabled]="!myForm.valid" (click)="create()" expand="block">Guardar
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
 </ion-content>

@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { EstudianteService } from '../services/estudiante.service';
 import { Estudiante } from '../models/estudiante';
 
-
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-tab4',
+  templateUrl: './tab4.page.html',
+  styleUrls: ['./tab4.page.scss'],
 })
-export class Tab2Page {
+export class Tab4Page {
 
   public students: Estudiante[];
 
@@ -23,5 +22,4 @@ export class Tab2Page {
       });
     });
   }
-
 }
